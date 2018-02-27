@@ -1,0 +1,36 @@
+.contactListNames {
+  margin: 2em 0em 2em 2em;
+  background-color: lightgray;
+  height: 60em;
+  width: 20em;
+  float: left;
+}
+
+.searchContacts {
+  text-align: center;
+  padding: 1em 0em;
+}
+
+.search {
+  width: 80%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.contactName {
+  text-align: center;
+  border-top: 2px solid darkgray;
+  border-bottom: 2px solid darkgray;
+  padding: 5px 0px;
+  cursor: pointer;
+}
+
+.contactInformation, .noContactSelected {
+  margin: 2em 0em 2em 2em;
+  padding: 1em;
+  width: 55em;
+  height: 60em;
+  background-color: rgba(211, 211, 211, 0.884);
+  float: left;
+}
