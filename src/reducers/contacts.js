@@ -14,10 +14,10 @@ export function contactsIsLoading(state = false, action) {
           return state;
   }
 }
-export function contacts(state = [], action) {
+export function contacts(state = { Contact: [] }, action) {
   switch (action.type) {
       case 'CONTACTS_FETCH_DATA_SUCCESS':
-          return action.contacts.data.Contact;
+          return action.contacts.data;
       default:
           return state;
   }

@@ -3,7 +3,10 @@ const {
   GraphQLObjectType,
 } = require('graphql');
 
-const contactQuery = require('./Contact/ContactQuery');
+const {
+  searchQuery,
+} = require('./Contact/ContactQuery');
+
 const {
   createContact,
   updateContact,
@@ -14,7 +17,7 @@ const RootQuery = new GraphQLObjectType({
   name: 'rootQuery',
   description: 'This is the root query which holds all possible READ entrypoints for the GraphQL API',
   fields: () => ({
-    Contact: contactQuery,
+    Contact: searchQuery,
   }),
 });
 

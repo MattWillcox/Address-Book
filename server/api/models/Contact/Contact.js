@@ -5,9 +5,6 @@ const sequelize = require('../../../config/database');
 const instanceMethods = {
   toJSON() {
     const values = Object.assign({}, this.get());
-
-    delete values.password;
-
     return values;
   },
 };
@@ -34,6 +31,12 @@ const Contact = sequelize.define('Contact', {
   },
   email: {
     type: Sequelize.STRING,
+  },
+  createdAt: {
+    type: Sequelize.DATE,
+  },
+  updatedAt: {
+    type: Sequelize.DATE,
   },
 }, { instanceMethods, tableName });
 

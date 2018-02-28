@@ -1,4 +1,6 @@
 const database = require('../../config/database');
+const contactsSeed = require('../../contacts.json').contacts;
+const Contact = require('../models/Contact/Contact');
 
 const dbService = (environment, migrate) => {
   const authenticateDB = () => (
@@ -16,9 +18,11 @@ const dbService = (environment, migrate) => {
       .sync()
   );
 
-  const successfulDBStart = () => (
-    console.info('connection to the database has been established successfully')
-  );
+  // Added seed option from contacts.json provided in GitHub repo
+  const successfulDBStart = () => {
+    Contact.bulkCreate(contactsSeed)
+      .then(() => console.info('connection to the database has been established successfully'));
+  };
 
   const errorDBStart = (err) => (
     console.info('unable to connect to the database:', err)

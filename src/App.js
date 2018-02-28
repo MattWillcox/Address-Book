@@ -8,10 +8,16 @@ class App extends Component {
     super();
     this.state = {
       contactSelected: false,
+      searchValue: '',
     }
   }
   componentDidMount() {
-      this.props.fetchData('http://localhost:2017/graphql?query={Contact{firstname, lastname, phone, address, email}}');
+    this.props.fetchData(`http://localhost:2017/graphql?query={Contact{firstname, lastname, phone, address, email}}`);
+  }
+
+  onSearchChange = (event) => {
+    this.props.fetchData(`http://localhost:2017/graphql?query={Contact(name:"${event.target.value}"){firstname, lastname, phone, address, email}}`);
+    this.setState({ searchValue: event.target.value });
   }
 
   onContactClick = () => {
@@ -38,20 +44,23 @@ class App extends Component {
         )
       }
 
+      const moveCaretAtEnd = (e) => {
+        var temp_value = e.target.value
+        e.target.value = ''
+        e.target.value = temp_value
+      }
+
       if (this.props.hasErrored) {
           return <p>Sorry! There was an error loading the contacts</p>;
-      }
-      if (this.props.isLoading) {
-          return <p>Loading…</p>;
       }
       return (
         <div className="main">
           <div className="contactListNames">
             <div className="searchContacts">
               <h1>All Contacts</h1>
-              <input className="search" type="text" placeholder="Search" />
+              <input className="search" type="text" placeholder="Search" autoFocus defaultValue={this.state.searchValue} onFocus={moveCaretAtEnd} onChange={this.onSearchChange} />
             </div>
-              {this.props.contacts.map((contact, i) => (
+              {this.props.contacts.Contact.map((contact, i) => (
                   <div className="contactName" key={i} onClick={this.onContactClick}>
                       {`${contact.lastname},  ${contact.firstname}`}
                   </div>
