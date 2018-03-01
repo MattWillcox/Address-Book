@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const helmet = require('helmet');
 const http = require('http');
-const mapRoutes = require('express-routes-mapper');
 const GraphHTTP = require('express-graphql');
 const cors = require('cors');
 
@@ -24,7 +23,6 @@ const environment = process.env.NODE_ENV;
  */
 const api = express();
 const server = http.Server(api);
-const mappedRoutes = mapRoutes(config.publicRoutes, 'api/controllers/ContactController/');
 const DB = dbService(environment, config.migrate).start();
 
 // allow cross origin requests
@@ -41,9 +39,6 @@ api.use(helmet({
 // parsing the request bodys
 api.use(bodyParser.urlencoded({ extended: false }));
 api.use(bodyParser.json());
-
-// public REST API
-api.use('/rest', mappedRoutes);
 
 // GraphQL API
 api.use('/graphql', GraphHTTP({

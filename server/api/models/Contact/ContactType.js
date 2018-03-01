@@ -8,7 +8,7 @@ const ContactType = new GraphQLObjectType({
   name: 'Contact',
   description: 'This represents a Contact',
   fields: () => ({
-    id: {
+    contactId: {
       type: GraphQLInt,
       resolve: (contact) => contact.contactId,
     },
