@@ -8,9 +8,9 @@ const ContactType = new GraphQLObjectType({
   name: 'Contact',
   description: 'This represents a Contact',
   fields: () => ({
-    contactId: {
+    contactid: {
       type: GraphQLInt,
-      resolve: (contact) => contact.contactId,
+      resolve: (contact) => contact.contactid,
     },
     firstname: {
       type: GraphQLString,

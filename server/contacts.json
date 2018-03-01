@@ -1,7 +1,7 @@
 {
   "contacts":[
     {
-      "contactId": 1,
+      "contactid": 1,
       "firstname":"Cameron",
       "lastname":"Dubas",
       "phone":"6047280012",
@@ -9,7 +9,7 @@
       "email":"cameron@changeheroes.com"
     },
     {
-      "contactId": 2,
+      "contactid": 2,
       "firstname":"Mike",
       "lastname":"Tan",
       "phone":"6043421109",
@@ -17,7 +17,7 @@
       "email":"mike@changeheroes.com"
     },
     {
-      "contactId": 3,
+      "contactid": 3,
       "firstname":"Ryan",
       "lastname":"Campbell",
       "phone":"6049881822",
@@ -25,7 +25,7 @@
       "email":"ryan@changeheroes.com"
     },
     {
-      "contactId": 4,
+      "contactid": 4,
       "firstname":"Steven",
       "lastname":"Zozula",
       "phone":"6045200192",
@@ -33,7 +33,7 @@
       "email":"steven@changeheroes.com"
     },
     {
-      "contactId": 5,
+      "contactid": 5,
       "firstname":"Daryl",
       "lastname":"Chmyko",
       "phone":"6042240422",
@@ -41,7 +41,7 @@
       "email":"daryl@changeheroes.com"
     },
     {
-      "contactId": 6,
+      "contactid": 6,
       "firstname":"Aaron",
       "lastname":"Vandenbrink",
       "phone":"6047581029",

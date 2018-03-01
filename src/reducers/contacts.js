@@ -14,18 +14,17 @@ export function contactsIsLoading(state = false, action) {
       return state;
   }
 }
-export function contacts(state = { Contact: [] }, action) {
+export function contacts(state = { Contact: [], ContactSelected: {} }, action) {
 switch (action.type) {
     case 'CONTACTS_FETCH_DATA_SUCCESS':
       return action.contacts.data;
     case 'CONTACTS_POST_DATA_SUCCESS': {
       const newContact = state.Contact.map(contact => {
-        if (contact.contactId === action.contacts.data.updateContact.contactId) {
+        if (contact.contactid === action.contacts.data.updateContact.contactid) {
           return action.contacts.data.updateContact;
         }
         return contact;
       })
-      console.log(newContact);
       return { ...state, Contact: newContact }
     }
     default:

@@ -47,8 +47,8 @@ const updateContact = {
   type: ContactType,
   description: 'The mutation that allows you to update an existing Contact by Id',
   args: {
-    contactId: {
-      name: 'contactId',
+    contactid: {
+      name: 'contactid',
       type: new GraphQLNonNull(GraphQLInt),
     },
     firstname: {
@@ -72,9 +72,9 @@ const updateContact = {
       type: GraphQLString,
     },
   },
-  resolve: (contact, { contactId, firstname, lastname, phone, address, email }) => (
+  resolve: (contact, { contactid, firstname, lastname, phone, address, email }) => (
     Contact
-      .findById(contactId)
+      .findById(contactid)
       .then((foundContact) => {
         if (!foundContact) {
           return 'Contact not found';
@@ -102,8 +102,8 @@ const deleteContact = {
   type: ContactType,
   description: 'The mutation that allows you to delete a existing Contact by Id',
   args: {
-    contactId: {
-      name: 'contactId',
+    contactid: {
+      name: 'contactid',
       type: new GraphQLNonNull(GraphQLInt),
     },
   },

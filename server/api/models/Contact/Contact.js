@@ -12,7 +12,7 @@ const instanceMethods = {
 const tableName = 'contacts';
 
 const Contact = sequelize.define('Contact', {
-  contactId: {
+  contactid: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
