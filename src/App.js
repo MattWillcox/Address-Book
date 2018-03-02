@@ -6,7 +6,7 @@ import SelectedContact from './components/SelectedContact';
 import ContactList from './components/ContactList';
 import './App.css';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -66,11 +66,9 @@ class App extends Component {
   }
 
   render() {
-
     if (this.props.hasErrored) {
-        return <p>Sorry! There was an error loading the contacts</p>;
+        return <div className="error"><p>Sorry! There was an error loading the contacts</p></div>;
     }
-
     return (
       <div className="main">
         <ContactList
